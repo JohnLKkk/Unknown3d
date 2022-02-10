@@ -1,0 +1,11 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+x64/
+.idea/
+Unknown3d.sln
+Core/Core.vcxproj
+Core/Core.vcxproj.filters
+Core/x64/
