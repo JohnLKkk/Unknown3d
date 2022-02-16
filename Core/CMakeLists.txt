@@ -19,15 +19,27 @@ set(Math3d
 	Math3d/Math.h
 	Math3d/Vector3.cpp
 	Math3d/Vector3.h
+	Math3d/Vector4.h
+	Math3d/Matrix4.h
+	Math3d/Matrix4.cpp
 )
 source_group("Math3d" FILES ${Math3d})
 
 set(Scene
 	Scene/Scene.cpp
 	Scene/Scene.h
+	Scene/Geometry.h
+	Scene/Geometry.cpp
 	Scene/Include.h
 )
 source_group("Scene" FILES ${Scene})
+
+set(Mesh
+	Mesh/BufDescriptor.h
+	Mesh/BufferBuilder.h
+	Mesh/Mesh.cpp
+)
+source_group("Mesh" FILES ${Mesh})
 
 set(Geometry
 	Geometry/Window.cpp

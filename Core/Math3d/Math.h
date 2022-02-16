@@ -124,7 +124,7 @@ public:
     }
 
     /**
-     * l = a.dot(b)。<br/>
+     * l = dot(a, b)。<br/>
      * @param a
      * @param b
      * @return l 返回a与b的点成结果。
@@ -141,6 +141,12 @@ public:
         return r;
     }
 
+    /**
+     * l = a.dot(b)。<br/>
+     * @param a
+     * @param b
+     * @return l 返回a与b的点成结果。
+     */
     template<typename G>
     CLASS<T, G> dot(const VECTOR<G>& b)
     {
@@ -185,10 +191,6 @@ public:
         return _self;
     }
 
-    VECTOR<T>& rcp()
-    {
-        
-    }
 };
 
 
