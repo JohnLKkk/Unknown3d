@@ -7,6 +7,7 @@
 
 bool UEngine::init(int args, char* argr[])
 {
+    return true;
 }
 
 void UEngine::launch()
@@ -19,6 +20,7 @@ void UEngine::onTick()
 
 bool UEngine::onTerminal()
 {
+    return true;
 }
 
 IEngine *S_IEngine(NULL);

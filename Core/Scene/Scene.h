@@ -71,7 +71,6 @@ namespace Unknown3d
          */
         const UNode* const getChildren(uint32_t i)const
         {
-            static_assert(i < m_Childrens.size());
             return m_Childrens[i];
         }
         
@@ -81,7 +80,6 @@ namespace Unknown3d
          */
         UNode* getChildren(uint32_t i)
         {
-            static_assert(i < m_Childrens.size());
             return m_Childrens[i];
         }
 
