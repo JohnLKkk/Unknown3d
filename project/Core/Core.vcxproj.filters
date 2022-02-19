@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Application.cpp">
+      <Filter>FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Matrix4.cpp">
+      <Filter>Math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Scene\Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Scene\Geometry.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\IWindow.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\WindowMgr.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\Win32Window.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Application.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Include.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Include.h">
+      <Filter>Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Math.h">
+      <Filter>Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Vector3.h">
+      <Filter>Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Vector4.h">
+      <Filter>Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Matrix4.h">
+      <Filter>Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Scene\Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Scene\Geometry.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Scene\Include.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\IWindow.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\WindowMgr.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\Win32Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\MyWorks\RiderProjects\Unknown3d\Core\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{CF926A4F-C339-301E-943E-9176684EFC8C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0CFCC43E-FBC1-34A3-8A56-37384D2336B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math3d">
+      <UniqueIdentifier>{006C185A-2999-3F55-80AB-044A656E52A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{8BAD8335-5BCA-3D58-A7D3-1AE5F6B96F40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{BF93D973-83D1-363F-8820-36AFD5FF9267}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
