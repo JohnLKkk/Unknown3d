@@ -30,6 +30,9 @@
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Application.h">
       <Filter>FrameWork</Filter>
     </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Settings.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Include.h">
       <Filter>FrameWork</Filter>
     </ClInclude>

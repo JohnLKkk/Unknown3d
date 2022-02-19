@@ -261,10 +261,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Core\FrameWork\Settings.h" />
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Engine.h" />
     <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Application.cpp" />
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Application.h" />
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Settings.h" />
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\FrameWork\Include.h" />
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Include.h" />
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Math3d\Math.h" />
