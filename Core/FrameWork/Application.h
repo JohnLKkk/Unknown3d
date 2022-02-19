@@ -1,5 +1,10 @@
 ﻿#ifndef _FRAMEWORK_APPLICATION_H_
 #define _FRAMEWORK_APPLICATION_H_
+#include <cstddef>
+#include <string>
+
+#include "Settings.h"
+#include "../Window/IWindow.h"
 
 namespace Unknown3d
 {
@@ -11,10 +16,17 @@ namespace Unknown3d
     class IApplication
     {
     protected:
+        //-----------------------Application生命周期----------------------------
         virtual void onInit()=0;
         virtual void onStart()=0;
-        virtual void onUpdate()=0;
-        virtual void onDestory()=0;
+        virtual void onUpdate(float tpf)=0;
+        virtual void onDestroy()=0;
+        //-----------------------Application生命周期----------------------------
+    public:
+        /**
+         * 启动Application。<br/>
+         */
+        virtual void launch()=0;
     };
 
     /**
@@ -24,8 +36,23 @@ namespace Unknown3d
      */
     class UBaseApplication: public IApplication
     {
-    public:
+    protected:
+        // 应用配置
+        USettings m_Setting;
         
+        // IWindow(跨平台抽象窗口)
+        Unknown3d::IWindow *m_IWindow = nullptr;
+        
+        void onInit() override;
+        void onStart() override;
+        void onUpdate(float tpf) override;
+        void onDestroy() override;
+    public:
+        UBaseApplication():IApplication()
+        {
+            m_Setting.m_Title = "Unknown3d";
+        }
+        void launch() override;
     };
 }
 

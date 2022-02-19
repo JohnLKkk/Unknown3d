@@ -1,11 +1,9 @@
 #include "IWindow.h"
 
-#include <cstdio>
-
-IWindow::IWindow()
+Unknown3d::IWindow::IWindow()
 {
-} 
+}
 
-IWindow::~IWindow()
+Unknown3d::IWindow::~IWindow()
 {
 }

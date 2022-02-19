@@ -1,7 +1,6 @@
 project(Core)
 
 set(Core
-	Engine.cpp
 	Engine.h
 )
 
@@ -10,6 +9,7 @@ source_group("Core" FILES ${/})
 set(FrameWork
 	FrameWork/Application.cpp
 	FrameWork/Application.h
+	FrameWork/Settings.h
 	FrameWork/Include.h
 )
 
@@ -67,5 +67,5 @@ if(USE_DLL)
 	target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/Thirdparty/glfw/dynamic/glfw3.dll)
 	add_library(${PROJECT_NAME} SHARED ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window})
 else()
-	add_library(${PROJECT_NAME} ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window})
+	add_library(${PROJECT_NAME} ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window} ${Mesh})
 endif()

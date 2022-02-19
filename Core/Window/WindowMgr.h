@@ -1,19 +1,29 @@
-#pragma once
+#ifndef _WINDOW_WINDOW_MGR_H_
+#define _WINDOW_WINDOW_MGR_H_
 #include "IWindow.h"
+#include "../FrameWork/Settings.h"
 
-class WindowMgr
+namespace Unknown3d
 {
-	WindowMgr();
-	~WindowMgr();
-public:
-	static WindowMgr& Instance();
+    /**
+     * @author
+     * @date 
+     */
+    class WindowMgr
+    {
+        WindowMgr();
+        ~WindowMgr();
+    public:
+        static WindowMgr& Instance();
+        
+        IWindow* createPlatformWindow(USettings &settings);
+        void onUpdate();
 
-	void createPlatformWindow();
-	void onUpdate();
-	
 
-	IWindow* getWindowIns() { return _m_window_ins; }
-protected:
-private:
-	IWindow* _m_window_ins;
-};
+        IWindow* getWindowIns() const { return _m_window_ins; }
+    private:
+        IWindow* _m_window_ins;
+    };
+}
+
+#endif

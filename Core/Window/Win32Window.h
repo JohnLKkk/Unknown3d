@@ -1,26 +1,38 @@
-#pragma once
+#ifndef _WINDOW_WIN32WINDOW_H_
+#define _WINDOW_WIN32WINDOW_H_
 #include "IWindow.h"
-#include<glfw/include/glfw3.h>
 
-class Win32Window : public IWindow
+namespace Unknown3d
 {
-public:
-	/**
-	* ´´½¨´°¿Ú¡£<br/>
-	* @param
-	*/
-	virtual void createWindow(int width = 640, int height = 480, const char* = "Unknow3d") override;
-	/**
-	* Ïú»Ù´°¿Ú¡£<br/>
-	* @param
-	*/
-	virtual void destroyWindow() override;
-	/**
-	* ´°¿Úupdate<br/>
-	* @return int
-	*/
-	virtual void onUpdate() override;
-protected:
-private:
-	GLFWwindow* _m_window;
-};
+    #include<glfw/include/glfw3.h>
+
+    /**
+     * @author
+     * @date 
+     */
+    class Win32Window : public IWindow
+    {
+    public:
+        /**
+        * åˆ›å»ºçª—å£ã€‚<br/>
+        * @param
+        */
+        virtual void createWindow(int width = 640, int height = 480, const char* = "Unknow3d", bool resize = false) override;
+        /**
+        * é”€æ¯çª—å£ã€‚<br/>
+        * @param
+        */
+        virtual void destroyWindow() override;
+        /**
+        * çª—å£update<br/>
+        * @return int
+        */
+        virtual void onUpdate() override;
+    protected:
+    private:
+        GLFWwindow* _m_window;
+    };
+}
+
+
+#endif

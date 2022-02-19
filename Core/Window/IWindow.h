@@ -1,62 +1,75 @@
-#pragma once
+#ifndef _WINDOW_IWINDOW_H_
+#define _WINDOW_IWINDOW_H_
 
-class IWindow
+namespace Unknown3d
 {
-public:
-	/**
-	* Ä¬ÈÏ¹¹Ôìº¯Êı<br/>
-	*/
-	IWindow();
-	/**
-	* Ä¬ÈÏÎö¹¹º¯Êı<br/>
-	*/
-	virtual ~IWindow();
+    /**
+     * @author ç²‰å“¥
+     * @date 
+     */
+    class IWindow
+    {
+    public:
+        /**
+        * é»˜è®¤æ„é€ å‡½æ•°<br/>
+        */
+        IWindow();
+        /**
+        * é»˜è®¤ææ„å‡½æ•°<br/>
+        */
+        virtual ~IWindow();
 
-	/**
-	* ´´½¨´°¿Ú<br/>
-	* @param
-	*/
-	virtual void createWindow(int width = 640, int height = 480, const char* = "Unknow3d") = 0;
-	/**
-	* Ïú»Ù´°¿Ú<br/>
-	* @param
-	*/
-	virtual void destroyWindow() = 0;
-	/**
-	* ´°¿Úupdate<br/>
-	* @return int
-	*/
-	virtual void onUpdate() = 0;
-	/**
-	* ÉèÖÃ´°¿Ú¿í<br/>
-	* @return
-	*/
-	void setWidth(int width)
-	{
-		_m_width = width;
-	}
-	/**
-	* ÉèÖÃ´°¿Ú¸ß<br/>
-	* @return
-	*/
-	void setHeight(int height)
-	{
-		_m_height = height;
-	}
-	/**
-	* »ñÈ¡´°¿Ú¿í<br/>
-	* @return int
-	*/
-	int getWidth()const { return _m_width; }
-	/**
-	* »ñÈ¡´°¿Ú¸ß<br/>
-	* @return int
-	*/
-	int getHeight()const { return _m_height; }
+        /**
+        * åˆ›å»ºçª—å£<br/>
+        * @param
+        */
+        virtual void createWindow(int width = 640, int height = 480, const char* = "Unknow3d", bool resize = false) = 0;
+        /**
+        * é”€æ¯çª—å£<br/>
+        * @param
+        */
+        virtual void destroyWindow() = 0;
+        /**
+        * çª—å£update<br/>
+        * @return int
+        */
+        virtual void onUpdate() = 0;
+        /**
+        * è®¾ç½®çª—å£å®½<br/>
+        * @return
+        */
+        void setWidth(int width)
+        {
+            _m_width = width;
+        }
+        /**
+        * è®¾ç½®çª—å£é«˜<br/>
+        * @return
+        */
+        void setHeight(int height)
+        {
+            _m_height = height;
+        }
+        /**
+        * è·å–çª—å£å®½<br/>
+        * @return int
+        */
+        int getWidth()const { return _m_width; }
+        /**
+        * è·å–çª—å£é«˜<br/>
+        * @return int
+        */
+        int getHeight()const { return _m_height; }
 	
-protected:
+    protected:
 	
-private:
-	int _m_width;
-	int _m_height;
-};
+    private:
+        int _m_width;
+        int _m_height;
+    };
+}
+
+
+#endif
+
+
