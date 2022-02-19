@@ -283,6 +283,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\WindowMgr.h" />
     <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\Win32Window.cpp" />
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\Win32Window.h" />
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Mesh\BufDescriptor.h" />
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Mesh\BufferBuilder.h" />
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Mesh\Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\MyWorks\RiderProjects\Unknown3d\project\ZERO_CHECK.vcxproj">

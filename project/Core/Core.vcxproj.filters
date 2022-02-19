@@ -22,6 +22,9 @@
     <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\Win32Window.cpp">
       <Filter>Window</Filter>
     </ClCompile>
+    <ClCompile Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Mesh\Mesh.cpp">
+      <Filter>Mesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Engine.h">
@@ -69,6 +72,12 @@
     <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Window\Win32Window.h">
       <Filter>Window</Filter>
     </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Mesh\BufDescriptor.h">
+      <Filter>Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\MyWorks\RiderProjects\Unknown3d\Core\Mesh\BufferBuilder.h">
+      <Filter>Mesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="E:\MyWorks\RiderProjects\Unknown3d\Core\CMakeLists.txt" />
@@ -82,6 +91,9 @@
     </Filter>
     <Filter Include="Math3d">
       <UniqueIdentifier>{006C185A-2999-3F55-80AB-044A656E52A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mesh">
+      <UniqueIdentifier>{D2DE5C95-6AD4-3621-8CF2-2CEF7EA53822}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{8BAD8335-5BCA-3D58-A7D3-1AE5F6B96F40}</UniqueIdentifier>
