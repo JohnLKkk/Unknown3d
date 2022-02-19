@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.0)
 project(Unknown3d)
 
 # 宏开关设置
-option(USE_DLL "Use Dynamic Link Library" ON)
+option(USE_DLL "Use Dynamic Link Library" OFF)
 
 set(GAME_ENTRY Tests)
 add_executable(${GAME_ENTRY} ${GAME_ENTRY}/TestLauncher.cpp)
