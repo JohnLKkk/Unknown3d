@@ -9,6 +9,7 @@
 void Unknown3d::UBaseApplication::onInit()
 {
     // 创建并检查所有模块是否正常
+
     
     // create window
     m_IWindow = WindowMgr::Instance().createPlatformWindow(m_Setting);
