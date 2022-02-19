@@ -1,11 +1,6 @@
 ﻿#ifndef _ENGINE_H_
 #define _ENGINE_H_
 
-#include "FrameWork/Include.h"
-#include "Math3d/Include.h"
-#include "Scene/Include.h"
-
-
 class IEngine
 {
 public:

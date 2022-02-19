@@ -3,7 +3,6 @@ project(Core)
 set(Core
 	Engine.cpp
 	Engine.h
-	TestLauncher.cpp
 )
 
 source_group("Core" FILES ${/})
@@ -51,13 +50,22 @@ set(Mesh
 source_group("Mesh" FILES ${Mesh})
 
 set(Geometry
-	Geometry/Window.cpp
-	Geometry/Window.h
+	Window/IWindow.cpp
+	Window/IWindow.h
+	Window/WindowMgr.cpp
+	Window/WindowMgr.h
+	Window/Win32Window.cpp
+	Window/Win32Window.h
 )
-source_group("Geometry" FILES ${Geometry})
+source_group("Window" FILES ${Geometry})
 
 include_directories(
-	Vendor/
+	../Thirdparty
 )
 
-add_library(${PROJECT_NAME} ${Core} ${Tests} ${FrameWork} ${Math3d} ${Scene} ${Geometry})
+if(USE_DLL)
+	target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/Thirdparty/glfw/dynamic/glfw3.dll)
+	add_library(${PROJECT_NAME} SHARED ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window})
+else()
+	add_library(${PROJECT_NAME} ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window})
+endif()

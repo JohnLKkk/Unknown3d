@@ -4,6 +4,10 @@
 #include <stdexcept>
 
 #include <vcruntime.h>
+#include "Window/WindowMgr.h"
+#include "FrameWork/Include.h"
+#include "Math3d/Include.h"
+#include "Scene/Include.h"
 
 bool UEngine::init(int args, char* argr[])
 {
@@ -37,6 +41,9 @@ int EngineMain(int argc, char* argv[])
     // launch Engine
     S_IEngine->launch();
 
+	// create window
+	WindowMgr::Instance().createPlatformWindow();
+
     // 获取一个线程,然后分配给引擎,这里使用主线程
     // 下面只是一段未封装的代码,不应该为while(true)
     while(true)
@@ -45,6 +52,8 @@ int EngineMain(int argc, char* argv[])
         S_IEngine->onTick();
 
         // 其他
+		
+		WindowMgr::Instance().onUpdate();
     }
 
     // final
