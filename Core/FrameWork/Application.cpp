@@ -5,6 +5,7 @@
 
 #include "../Window/WindowMgr.h"
 #include <Windows.h>
+#include "../Device/DeviceMgr.h"
 
 void Unknown3d::UBaseApplication::onInit()
 {
@@ -13,6 +14,13 @@ void Unknown3d::UBaseApplication::onInit()
     
     // create window
     m_IWindow = WindowMgr::Instance().createPlatformWindow(m_Setting);
+	//create device
+	//TODO USE_VULKAN放到cmake中设置或者代码里找个统一设置宏的文件
+#ifndef USE_VULKAN
+#define USE_VULKAN
+#endif
+	m_IDevice = DeviceMgr::Instance().createDevice();
+	
     // 检查跨平台窗口是否正常创建
     if(!m_IWindow)
     {
@@ -38,7 +46,9 @@ void Unknown3d::UBaseApplication::onStart()
 void Unknown3d::UBaseApplication::onUpdate(float tpf)
 {
     // 更新所有模块
-    m_IWindow->onUpdate();
+	WindowMgr::Instance().onUpdate();
+
+	DeviceMgr::Instance().beginDraw();
 
     // inputManager.onUpdate()
     
