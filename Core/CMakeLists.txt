@@ -49,7 +49,7 @@ set(Mesh
 )
 source_group("Mesh" FILES ${Mesh})
 
-set(Geometry
+set(Window
 	Window/IWindow.cpp
 	Window/IWindow.h
 	Window/WindowMgr.cpp
@@ -57,15 +57,25 @@ set(Geometry
 	Window/Win32Window.cpp
 	Window/Win32Window.h
 )
-source_group("Window" FILES ${Geometry})
+source_group("Window" FILES ${Window})
+
+set(Device
+	Device/VulkanDevice.cpp
+	Device/VulkanDevice.h
+	Device/IDevice.h
+	Device/DeviceMgr.cpp
+	Device/DeviceMgr.h
+)
+source_group("Device" FILES ${Device})
 
 include_directories(
-	../Thirdparty
+	../Thirdparty/Vulkan/Include
+	../Thirdparty/Vulkan/Third-Party/Include
 )
 
 if(USE_DLL)
-	target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/Thirdparty/glfw/dynamic/glfw3.dll)
-	add_library(${PROJECT_NAME} SHARED ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window})
+	#target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/Thirdparty/glfw/dynamic/glfw3.dll)
+	add_library(${PROJECT_NAME} SHARED ${Core} ${FrameWork} ${Math3d} ${Scene} ${Mesh} ${Window} ${Device})
 else()
-	add_library(${PROJECT_NAME} ${Core} ${FrameWork} ${Math3d} ${Scene} ${Geometry} ${Window} ${Mesh})
+	add_library(${PROJECT_NAME} ${Core} ${FrameWork} ${Math3d} ${Scene} ${Mesh} ${Window} ${Device})
 endif()

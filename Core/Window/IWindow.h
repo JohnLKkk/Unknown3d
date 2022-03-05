@@ -60,6 +60,12 @@ namespace Unknown3d
         * @return int
         */
         int getHeight()const { return _m_height; }
+
+		/**
+		 @desc:返回不同平台下的window的指针
+		 @return: void*
+		*/
+		virtual void* getWindowHandle() = 0;
 	
     protected:
 	

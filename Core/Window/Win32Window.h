@@ -4,7 +4,7 @@
 
 namespace Unknown3d
 {
-    #include<glfw/include/glfw3.h>
+    #include<glfw/glfw3.h>
 
     /**
      * @author
@@ -28,6 +28,12 @@ namespace Unknown3d
         * @return int
         */
         virtual void onUpdate() override;
+
+		/**
+		 @desc:获取Win平台下的window对象(需要将void*转成对应的类型)
+		 @return: void*
+		*/
+		virtual void* getWindowHandle() override { return _m_window; };
     protected:
     private:
         GLFWwindow* _m_window;

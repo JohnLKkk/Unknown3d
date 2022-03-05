@@ -5,6 +5,7 @@
 
 #include "Settings.h"
 #include "../Window/IWindow.h"
+#include "../Device/IDevice.h"
 
 namespace Unknown3d
 {
@@ -42,6 +43,8 @@ namespace Unknown3d
         
         // IWindow(跨平台抽象窗口)
         Unknown3d::IWindow *m_IWindow = nullptr;
+		// IDevice(图形渲染)
+		Unknown3d::IDevice *m_IDevice = nullptr;
         
         void onInit() override;
         void onStart() override;

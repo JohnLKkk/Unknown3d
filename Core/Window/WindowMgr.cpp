@@ -17,9 +17,12 @@ Unknown3d::WindowMgr & Unknown3d::WindowMgr::Instance()
 
 Unknown3d::IWindow* Unknown3d::WindowMgr::createPlatformWindow(USettings &settings)
 {
-	// TODO create window by platform
+#ifdef WIN32
 	_m_window_ins = new Win32Window();
 	_m_window_ins->createWindow(settings.m_Width, settings.m_Height, settings.m_Title, settings.m_Resize);
+#else
+	//other platform
+#endif
 
 	// 返回窗口句柄
 	return _m_window_ins;

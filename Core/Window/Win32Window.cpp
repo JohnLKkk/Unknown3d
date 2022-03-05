@@ -40,8 +40,7 @@ void Unknown3d::Win32Window::onUpdate()
 {
 	if (!glfwWindowShouldClose(_m_window))
 	{
-		glfwSwapBuffers(_m_window);
+		//glfwSwapBuffers(_m_window);
 		glfwPollEvents();
 	}
 }
-
