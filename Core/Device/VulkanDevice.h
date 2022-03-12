@@ -34,8 +34,12 @@ namespace Unknown3d
 	class VulkanDevice :public IDevice
 	{
 	public:
-		VulkanDevice();
-		~VulkanDevice();
+		VulkanDevice() {
+			initVulkan();
+		}
+		~VulkanDevice() {
+
+		}
 
 		/**
 		 @desc: TODO:暂时由它管理vulkan的渲染流程，后面把每个流程都抽离成单个class
@@ -122,14 +126,6 @@ namespace Unknown3d
 		size_t currentFrame = 0;
 		bool framebufferResized = false;
 	};
-
-	VulkanDevice::VulkanDevice()
-	{
-	}
-
-	VulkanDevice::~VulkanDevice()
-	{
-	}
 }
 
 #endif

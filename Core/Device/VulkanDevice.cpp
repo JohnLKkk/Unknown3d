@@ -606,8 +606,8 @@ namespace Unknown3d {
 
 	void VulkanDevice::createGraphicsPipeline()
 	{
-		auto vertShaderCode = readFile("shaders/vert.spv");
-		auto fragShaderCode = readFile("shaders/frag.spv");
+		auto vertShaderCode = readFile("D:/Unknown3d_zy/Unknown3d/Core/shaders/vert.spv");
+		auto fragShaderCode = readFile("D:/Unknown3d_zy/Unknown3d/Core/shaders/frag.spv");
 
 		VkShaderModule vertShaderModule = createShaderModule(device, vertShaderCode);
 		VkShaderModule fragShaderModule = createShaderModule(device, fragShaderCode);

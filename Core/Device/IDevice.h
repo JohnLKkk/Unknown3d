@@ -12,9 +12,8 @@ namespace Unknown3d {
 	class IDevice
 	{
 	public:
-		IDevice();
-		virtual ~IDevice();
-
+		IDevice() {};
+		virtual ~IDevice() {};
 		/**
 		 @desc: do some logic before flush 
 		 @return: void

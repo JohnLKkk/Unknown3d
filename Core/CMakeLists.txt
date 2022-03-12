@@ -69,8 +69,10 @@ set(Device
 source_group("Device" FILES ${Device})
 
 include_directories(
-	../Thirdparty/Vulkan/Include
-	../Thirdparty/Vulkan/Third-Party/Include
+	# ../Thirdparty/Vulkan/Include
+	# ../Thirdparty/Vulkan/Third-Party/Include
+	${VULKAN_SDK_PATH}/Include
+	${VULKAN_SDK_PATH}/Third-Party/Include
 )
 
 if(USE_DLL)
