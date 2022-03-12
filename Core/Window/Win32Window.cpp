@@ -19,6 +19,7 @@ void Unknown3d::Win32Window::createWindow(int width, int height, const char* win
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 	glfwWindowHint(GLFW_RESIZABLE, resize);
+	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);//这行必须要有，否则你会看到:Error: Vulkan: Window surface creation requires the window to have the client API set to GLFW_NO_API
 
 	_m_window = glfwCreateWindow(width, height, win_title, NULL, NULL);
 	if (!_m_window)

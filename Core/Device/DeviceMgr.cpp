@@ -9,6 +9,7 @@ namespace Unknown3d {
 	}
 	IDevice * DeviceMgr::createDevice()
 	{
+#define USE_VULKAN
 #ifdef USE_VULKAN
 		device = new VulkanDevice();
 #else
