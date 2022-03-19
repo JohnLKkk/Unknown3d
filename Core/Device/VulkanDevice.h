@@ -5,7 +5,7 @@
 #include<glfw/glfw3.h>
 #include <vector>
 #include <optional>
-#include "IDevice.h"
+#include "DeviceBase.h"
 /*!
  * @desc vulkan render
  *
@@ -31,7 +31,7 @@ namespace Unknown3d
 		}
 	};
 
-	class VulkanDevice :public IDevice
+	class VulkanDevice :public DeviceBase
 	{
 	public:
 		VulkanDevice() {
@@ -49,16 +49,15 @@ namespace Unknown3d
 
 		void createInstance();
 		void setupDebugMessenger();
-		void createSurface();
-		void pickPhysicalDevice();
-		void createLogicalDevice();
-		void createSwapChain();
-		void createImageViews();
+		//void createSurface();
+		
+		//void createSwapChain();
+		//void createImageViews();
 		void createRenderPass();
 		void createGraphicsPipeline();
-		void createFramebuffers();
+		//void createFramebuffers();
 		void createCommandPool();
-		void createCommandBuffers();
+		//void createCommandBuffers();
 		void createSyncObjects();
 
 		void recreateSwapChain();
@@ -73,19 +72,27 @@ namespace Unknown3d
 		 @desc: do some logic before flush
 		 @return: void
 		*/
-		virtual void DoBeginFrame() override;
+		virtual void doBeginFrame() override;
 		/**
 		 @desc:do the flush logic
 		 @return: void
 		*/
-		virtual void DoFlushFrame() override;
+		virtual void doFlushFrame() override;
 		/**
 		 @desc: do some logic after flush
 		 @return: void
 		*/
-		virtual void DoEndFrame() override;
+		virtual void doEndFrame() override;
 
 	private:
+		virtual void doCreateSurface() override;
+		virtual void doCreateSwapChain() override;
+		virtual void doCreateImageViews() override;
+		virtual void doCreateFramebuffers() override;
+		virtual void doCreateCommandBuffers() override;
+		void pickPhysicalDevice();
+		void createLogicalDevice();
+
 		bool isDeviceSuitable(VkPhysicalDevice device);
 		SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
 		QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);

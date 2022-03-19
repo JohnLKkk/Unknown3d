@@ -7,7 +7,7 @@ namespace Unknown3d {
 		static DeviceMgr instance;
 		return instance;
 	}
-	IDevice * DeviceMgr::createDevice()
+	DeviceBase * DeviceMgr::createDevice()
 	{
 #define USE_VULKAN
 #ifdef USE_VULKAN
@@ -21,9 +21,9 @@ namespace Unknown3d {
 	{
 		if (device)
 		{
-			device->DoBeginFrame();
-			device->DoFlushFrame();
-			device->DoEndFrame();
+			device->doBeginFrame();
+			device->doFlushFrame();
+			device->doEndFrame();
 		}
 	}
 }

@@ -19,7 +19,7 @@ void Unknown3d::UBaseApplication::onInit()
 #ifndef USE_VULKAN
 #define USE_VULKAN
 #endif
-	m_IDevice = DeviceMgr::Instance().createDevice();
+	m_DeviceBase = DeviceMgr::Instance().createDevice();
 	
     // 检查跨平台窗口是否正常创建
     if(!m_IWindow)

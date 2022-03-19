@@ -10,7 +10,7 @@
  * 
  */
 #include "VulkanDevice.h"
-#include "IDevice.h"
+#include "DeviceBase.h"
 
 namespace Unknown3d {
 	class DeviceMgr
@@ -18,8 +18,8 @@ namespace Unknown3d {
 	public:
 		static DeviceMgr& Instance();
 
-		IDevice* createDevice();
-		IDevice* getCurDevice() { return device; }
+		DeviceBase* createDevice();
+		DeviceBase* getCurDevice() { return device; }
 
 		/**
 		 @desc:control the device frame update order
@@ -29,7 +29,7 @@ namespace Unknown3d {
 	protected:
 	private:
 		DeviceMgr* _m_deviceMgrIns;
-		IDevice* device;
+		DeviceBase* device;
 	};
 }
 

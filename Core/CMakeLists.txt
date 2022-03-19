@@ -62,7 +62,8 @@ source_group("Window" FILES ${Window})
 set(Device
 	Device/VulkanDevice.cpp
 	Device/VulkanDevice.h
-	Device/IDevice.h
+	Device/DeviceBase.cpp
+	Device/DeviceBase.h
 	Device/DeviceMgr.cpp
 	Device/DeviceMgr.h
 )

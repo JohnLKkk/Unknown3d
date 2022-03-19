@@ -135,17 +135,20 @@ namespace Unknown3d {
 
 	/* vulkan render logic begin */
 
+	//TODO 用deviceProxy来控制这些流程
 	void VulkanDevice::initVulkan()
 	{
 		createInstance();
 		setupDebugMessenger();
 		createSurface();
-		pickPhysicalDevice();
-		createLogicalDevice();
+		/*pickPhysicalDevice();
+		createLogicalDevice();*/
 		createSwapChain();
 		createImageViews();
+		//
 		createRenderPass();
 		createGraphicsPipeline();
+
 		createFramebuffers();
 		createCommandPool();
 		createCommandBuffers();
@@ -403,13 +406,15 @@ namespace Unknown3d {
 		}
 	}
 
-	void VulkanDevice::createSurface()
+	void VulkanDevice::doCreateSurface()
 	{
 #ifdef  WIN32
 		if (glfwCreateWindowSurface(instance, static_cast<GLFWwindow*>(getWindowIns()), nullptr, &surface) != VK_SUCCESS) {
 			throw std::runtime_error("failed to create window surface!");
 		}
 #endif //  WIN32
+		pickPhysicalDevice();
+		createLogicalDevice();
 	}
 
 	void VulkanDevice::pickPhysicalDevice()
@@ -482,7 +487,7 @@ namespace Unknown3d {
 		vkGetDeviceQueue(device, indices.presentFamily.value(), 0, &presentQueue);
 	}
 
-	void VulkanDevice::createSwapChain()
+	void VulkanDevice::doCreateSwapChain()
 	{
 		SwapChainSupportDetails swapChainSupport = querySwapChainSupport(physicalDevice);
 
@@ -535,7 +540,7 @@ namespace Unknown3d {
 		swapChainExtent = extent;
 	}
 
-	void VulkanDevice::createImageViews()
+	void VulkanDevice::doCreateImageViews()
 	{
 		swapChainImageViews.resize(swapChainImages.size());
 
@@ -717,7 +722,7 @@ namespace Unknown3d {
 		vkDestroyShaderModule(device, vertShaderModule, nullptr);
 	}
 
-	void VulkanDevice::createFramebuffers()
+	void VulkanDevice::doCreateFramebuffers()
 	{
 		swapChainFramebuffers.resize(swapChainImageViews.size());
 
@@ -754,7 +759,7 @@ namespace Unknown3d {
 		}
 	}
 
-	void VulkanDevice::createCommandBuffers()
+	void VulkanDevice::doCreateCommandBuffers()
 	{
 		commandBuffers.resize(swapChainFramebuffers.size());
 
@@ -801,6 +806,7 @@ namespace Unknown3d {
 		}
 	}
 
+	// 通过semaphore和fence来同步swapchain
 	void VulkanDevice::createSyncObjects()
 	{
 		imageAvailableSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
@@ -824,11 +830,11 @@ namespace Unknown3d {
 		}
 	}
 
-	void VulkanDevice::DoBeginFrame()
+	void VulkanDevice::doBeginFrame()
 	{
 	}
 
-	void VulkanDevice::DoFlushFrame()
+	void VulkanDevice::doFlushFrame()
 	{
 		vkWaitForFences(device, 1, &inFlightFences[currentFrame], VK_TRUE, UINT64_MAX);
 
@@ -895,7 +901,7 @@ namespace Unknown3d {
 		currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 	}
 
-	void VulkanDevice::DoEndFrame()
+	void VulkanDevice::doEndFrame()
 	{
 	}
 
